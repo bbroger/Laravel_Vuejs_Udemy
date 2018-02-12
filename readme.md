@@ -1,8 +1,10 @@
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<p align="center"><img width="100px" height="100px"src="http://www.programwitherik.com/content/images/2017/01/87ow.png"></p>
 - Curso de Laravel 55 com Vue-js (Udemy - Prof.Guilherme Ferreira)
 - Usar php7 e biblioteca php com sqlite
 - Dicas para baixar o código fonte:
 - Comando:
+</br>
 $ composer create-project --prefer-dist laravel/laravel blog "5.5.*"
 
 - Rodar Servidor PHP:
@@ -35,6 +37,7 @@ $ composer create-project --prefer-dist laravel/laravel blog "5.5.*"
 Route::middleware(['auth'])->prefix('admin')->namespace('Admin')->group(function(){
   Route::resource('artigos', 'ArtigosController');
 });
+- Usei somente sqlite para login, alterar .env
 
 - Criar uma nova model - aula 34
 - Cria uma model com comando do laravel, chamada Artigo no singular
