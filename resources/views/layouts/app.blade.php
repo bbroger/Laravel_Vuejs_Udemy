@@ -29,6 +29,10 @@
                 </a>
 
                 <ul class="dropdown-menu">
+                  {{-- menu de rota para admin --}}
+                  <li>
+                    <a href="{{route('admin')}}">Admin</a>
+                  </li>
                     <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();
@@ -52,6 +56,9 @@
     </div>
 
     <!-- Scripts -->
+    <!-- https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started -->
+    {{-- <script src="https://unpkg.com/vue-ckeditor2"></script> --}}
+    <script src="//cdn.ckeditor.com/4.6.2/full/ckeditor.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

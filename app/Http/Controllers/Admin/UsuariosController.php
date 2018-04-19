@@ -16,9 +16,9 @@ class UsuariosController extends Controller
      */
     public function index()
     {
-      //referente ao component bootstrap que indica paginas
+      //referente ao component bootstrap que indica paginas //["titulo"=>"Home","url"=>route('home')],
       $listaMigalhas = json_encode([
-        ["titulo"=>"Home","url"=>route('home')],
+        ["titulo"=>"Admin","url"=>route('admin')],
         ["titulo"=>"Lista de Usuarios","url"=>""],
       ]);
 

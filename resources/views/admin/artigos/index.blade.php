@@ -21,7 +21,7 @@
       <tabela-lista
       v-bind:titulos="['#', 'Título','Descrição','Autor','data']"
       v-bind:itens="{{json_encode($listaArtigos)}}"
-      ordem="asc" ordemCol="2"
+      ordem="desc" ordemCol="0"
       criar="#criar" detalhe="/admin/artigos/" editar="/admin/artigos/" deletar="/admin/artigos/" token="{{ csrf_token() }}"
       modal="sim"
       ></tabela-lista>
@@ -32,8 +32,8 @@
 
     </painel>
   </pagina>
+  <!--vem da rota ->route('artigos.store') / token do laravel - > csrf_token()  -->
   <modal nome="adicionar" titulo="Adicionar">
-    <!--vem da rota ->{{route('artigos.store')}} / token do laravel - >{{ csrf_token() }} -->
     <formulario id="formAdicionar" css="" action="{{route('artigos.store')}}" method="POST" enctype="" token="{{ csrf_token() }}">
       <div class="form-group">
         <label for="titulo">Titulo</label>
@@ -43,11 +43,23 @@
         <label for="descricao">Descrição</label>
         <input type="text" class="form-control" id="descricao" name="descricao" placeholder="Descricao" value="{{old('descricao')}}">
       </div>
+        <!--implementar vue-ckeditor-->
+        <div class="form-group">
+          <label for="addConteudo">Conteúdo</label>
 
-      <div class="form-group">
-        <label for="conteudo">Conteudo</label>
-        <textarea class="form-control" id="conteudo" name="conteudo">{{old('conteudo')}}</textarea>
-      </div>
+          <ckeditor
+            id="addConteudo"
+            name="conteudo"
+            value="{{old('conteudo')}}"
+            v-bind:config="{
+                      toolbar: [
+                        [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
+                      ],
+                      height: 200
+                    }" >
+          </ckeditor>
+
+        </div>
 
       <div class="form-group">
         <label for="data">Data</label>
@@ -72,8 +84,19 @@
       </div>
 
       <div class="form-group">
-        <label for="conteudo">Conteudo</label>
-        <textarea class="form-control" id="conteudo" name="conteudo" v-model="$store.state.item.conteudo"></textarea>
+        <label for="editConteudo">Conteúdo</label>
+        {{-- <textarea class="form-control" id="editConteudo" name="editConteudo" v-model="$store.state.item.conteudo"></textarea> --}}
+        <ckeditor
+          id="editConteudo"
+          name="conteudo"
+          v-model="$store.state.item.conteudo"
+          v-bind:config="{
+                    toolbar: [
+                      [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript' ]
+                    ],
+                    height: 200
+                  }" >
+        </ckeditor>
       </div>
 
       <div class="form-group">

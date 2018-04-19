@@ -80,6 +80,23 @@ $ php artisan make:migration add_autor_table_users --table=users
 $ php artisan migrate:status
 $ php artisan migrate
 
+- CKEditor:
+- https://github.com/dangvanthanh/vue-ckeditor2
+- https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started
+$ npm install ckeditor
+$ npm install ckeditor --save
+$ npm update
+$ npm install vue-ckeditor2 --save
+$ bower install ckeditor
+- Execute npm rebuild node-sass para criar ou reciar a ligação para o seu ambiente atual.
+$ npm rebuild node-sass
+
+- Acrecentei no app.js, e import
+  import ckeditor from 'vue-ckeditor2';
+  components: {
+  ckeditor,
+}
+
 AdminLTE:
     https://adminlte.io/themes/AdminLTE/index.html
 Icones:

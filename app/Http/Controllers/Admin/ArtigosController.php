@@ -18,7 +18,7 @@ class ArtigosController extends Controller
     {
         //referente ao component bootstrap que indica paginas - migalhas
         $listaMigalhas = json_encode([
-          ["titulo"=>"Home","url"=>route('home')],
+          ["titulo"=>"Admin","url"=>route('admin')],
           ["titulo"=>"Lista de artigos","url"=>""],
         ]);
         //$listaArtigos = json_encode(Artigo::all()); // traz todos
@@ -30,14 +30,17 @@ class ArtigosController extends Controller
           //outra opcao e usar metodo de relacionamento para buscar autor
           // $value->user_id = $value->user->name;
           // unset($value->user);
-        }*/
+        }
 
-        //usar Database: Query Builder
+        //usar Database: Query Builder --> Aula 51
         $listaArtigos = DB::table('artigos')
                         ->join('users','users.id','=','artigos.user_id')
                         ->select('artigos.id','artigos.titulo','artigos.descricao','users.name','artigos.data')
                         ->whereNull('deleted_at')
-                        ->paginate(5);
+                        ->paginate(5);*/
+
+        //lista artigos vai vir do modelo Artigo
+        $listaArtigos = Artigo::listaArtigos(5);
 
         return view('admin.artigos.index',compact('listaMigalhas','listaArtigos'));
     }

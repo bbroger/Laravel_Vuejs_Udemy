@@ -10,6 +10,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import Vuex from 'vuex';
+import ckeditor from 'vue-ckeditor2';
 Vue.use(Vuex);
 
 /**
@@ -41,6 +42,8 @@ Vue.component('migalhas', require('./components/Migalhas.vue'));
 Vue.component('modal', require('./components/modal/Modal.vue'));
 Vue.component('modallink', require('./components/modal/ModalLink.vue'));
 Vue.component('formulario', require('./components/Formulario.vue'));
+Vue.component('ckeditor', require('vue-ckeditor2'));
+//https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started
 //temos que colocar nosso store dentro desta const para podermos usar no projeto - motorzinho do sistema
 const app = new Vue({
     el: '#app',
@@ -49,5 +52,8 @@ const app = new Vue({
     mounted: function () {
       console.log("ok");
       document.getElementById('app').style.display = "block";
-    } 
+    },
+    components: {
+      ckeditor,
+    }
 });
