@@ -104,6 +104,9 @@ Icones:
 Fontes:
     @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
     @import url("http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css");
+- Helpers -> str_slug / str_limit
+- Writing Gates - Authorization
+- Gates are Closures that determine if a user is authorized to perform a given action and are typically defined in the - - App\Providers\AuthServiceProvider class using the Gate facade.
 
 <p align="center">
 
@@ -111,4 +114,5 @@ Fontes:
 
 </p>
 
-## About
+## Renato Lucena 2018
+## @cpdrenato

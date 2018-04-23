@@ -43,6 +43,7 @@ Vue.component('modal', require('./components/modal/Modal.vue'));
 Vue.component('modallink', require('./components/modal/ModalLink.vue'));
 Vue.component('formulario', require('./components/Formulario.vue'));
 Vue.component('ckeditor', require('vue-ckeditor2'));
+Vue.component('artigocard', require('./components/ArtigoCard.vue'));
 //https://github.com/dangvanthanh/vue-ckeditor2/wiki/Getting-Started
 //temos que colocar nosso store dentro desta const para podermos usar no projeto - motorzinho do sistema
 const app = new Vue({

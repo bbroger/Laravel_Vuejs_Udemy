@@ -24,7 +24,12 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
+        // adicionado - authorization#writing-gates
+        Gate::define('eAdmin', function ($user) {
+          return $user->admin == "S";
+      });
+      Gate::define('autor', function ($user) {
+        return ($user->admin == "S" ? true : $user->autor == "S");
+    });
     }
 }

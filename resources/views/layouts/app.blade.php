@@ -30,9 +30,12 @@
 
                 <ul class="dropdown-menu">
                   {{-- menu de rota para admin --}}
-                  <li>
-                    <a href="{{route('admin')}}">Admin</a>
-                  </li>
+                  @can('autor')
+                    <li>
+                      <a href="{{route('admin')}}">Admin</a>
+                    </li>
+                  @endcan
+
                     <li>
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault();

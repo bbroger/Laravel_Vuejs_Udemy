@@ -33,7 +33,8 @@ class AdminController extends Controller
       $totalUsuarios = User::count();;
       $totalArtigos = Artigo::count();
       $totalAutores = User::where('autor','=','S')->count();;
+      $totalAdmin = User::where('admin','=','S')->count();;
         //return view('home',compact('listaMigalhas','totalUsuarios','totalArtigos','totalAutores'));
-        return view('admin',compact('listaMigalhas','totalUsuarios','totalArtigos','totalAutores'));
+        return view('admin',compact('listaMigalhas','totalUsuarios','totalArtigos','totalAutores','totalAdmin'));
     }
 }
